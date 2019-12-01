@@ -1,17 +1,43 @@
+using System;
+
 namespace AdventOfCode.Solutions.Year2019 {
 
-    class Day01 : ASolution {
-        
-        public Day01() : base(1, 2019, "") {
-            
-        }
+  class Day01 : ASolution {
 
-        protected override string SolvePartOne() {
-            return null; 
-        }
+    public Day01() : base(1, 2019, "") {
 
-        protected override string SolvePartTwo() {
-            return null; 
-        }
     }
+
+    protected override string SolvePartOne() {
+      Double total = 0;
+      string[] lines = System.IO.File.ReadAllLines(@"./Solutions/Year2019/Day01/input");
+      
+      foreach (string line in lines) {
+        Double lineTotal = Math.Floor((Double.Parse(line) / 3.0) - 2.0);
+        total += lineTotal;
+      }
+
+      System.Console.WriteLine("\t" + total);
+      return null; 
+    }
+
+    protected override string SolvePartTwo() {
+      Double total = 0;
+      string[] lines = System.IO.File.ReadAllLines(@"./Solutions/Year2019/Day01/input");
+      
+      foreach (string line in lines) {
+        Double lineTotal = Double.Parse(line);
+        while (lineTotal > 0) {
+          lineTotal = Math.Floor((lineTotal / 3.0) - 2.0);
+
+          if (lineTotal > 0) {
+            total += lineTotal;
+          }
+        }
+      }
+
+      System.Console.WriteLine("\t" + total);
+      return null; 
+    }
+  }
 }

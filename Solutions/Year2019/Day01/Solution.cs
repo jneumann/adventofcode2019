@@ -17,8 +17,7 @@ namespace AdventOfCode.Solutions.Year2019 {
         total += lineTotal;
       }
 
-      System.Console.WriteLine("\t" + total);
-      return null; 
+      return total.ToString(); 
     }
 
     protected override string SolvePartTwo() {
@@ -36,8 +35,7 @@ namespace AdventOfCode.Solutions.Year2019 {
         }
       }
 
-      System.Console.WriteLine("\t" + total);
-      return null; 
+      return total.ToString(); 
     }
   }
 }

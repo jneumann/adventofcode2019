@@ -34,9 +34,7 @@ namespace AdventOfCode.Solutions.Year2019 {
                 instr += 4;
             }
 
-            System.Console.WriteLine(opcode[0]);
-
-            return null;
+            return opcode[0].ToString();
         }
 
         protected override string SolvePartTwo() {
@@ -88,9 +86,7 @@ namespace AdventOfCode.Solutions.Year2019 {
                 }
             }
 
-            System.Console.WriteLine(100 * noun + verb);
-
-            return null;
+            return (100 * noun + verb).ToString();
         }
     }
 }

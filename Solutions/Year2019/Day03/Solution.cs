@@ -79,15 +79,16 @@ namespace AdventOfCode.Solutions.Year2019 {
             path2 = path2.Distinct().ToList();
 
             var result = path1.Intersect(path2);
+            List<int> result_total = new List<int> { };
 
-            foreach(var r in result)
+            foreach (var r in result)
             {
-                System.Console.WriteLine(r);
+                result_total.Add(r.Item1 + r.Item2);
             }
 
-            System.Console.WriteLine("---");
+            result_total.Sort();
 
-            return null; 
+            return result_total[0].ToString(); 
         }
 
         protected override string SolvePartTwo() {
@@ -168,17 +169,12 @@ namespace AdventOfCode.Solutions.Year2019 {
                 var step1 = path1.FindIndex(a => a == r);
                 var step2 = path2.FindIndex(a => a == r);
 
-                int total = step1 + step2;
-
-                System.Console.WriteLine(step1.ToString() + " " + step2.ToString() + " " + total.ToString());
-
                 step_results.Add(step1 + step2);
             }
 
             step_results.Sort();
-            System.Console.WriteLine(step_results[0]);
 
-            return null;
+            return (step_results[0] + 2).ToString();
         }
     }
 }
